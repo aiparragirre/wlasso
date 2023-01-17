@@ -38,6 +38,6 @@ All the R code needed to reproduce the results obtained in the simulation study 
 
 In the folder `Functions` all the functions needed to conduct the simulation study are available.
 
-We need to run the code in the file `exe-sim.R` to run the simulations. The results of these simulations can also be downloaded here: shorturl.at/jnRV6
+We need to run the code in the file `exe-sim.R` to run the simulations. The results of these simulations can also be [downloaded here](https://shorturl.at/jnRV6)
 
 
