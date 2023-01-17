@@ -1,5 +1,4 @@
 rm(list=ls())
-setwd("/Users/amaiaiparragirre/SynologyDrive/Lana/Tesia/2022-07 Estantzia NZ/Ikerkuntza/Programazioa/GitHub/R code - Simulation study")
 
 # Packages ----------------------------------------------------------------
 
@@ -164,14 +163,4 @@ res_logistic_scenario2 <- general.f(population = pop_logistic_scenario2$data,
 save(res_logistic_scenario2, file="Simulations/res_logistic_scenario2.RData")
 
 
-
-# Results -----------------------------------------------------------------
-
-sapply(paste0("Functions/Results-Graphics/",list.files("Functions/Results-Graphics/", full.names=F, pattern='\\.[rR]$')), source)
-
-obj.name <- "res_logistic_scenario2"
-newres <- res.transform(get(obj.name), method.ind = c(8,9,10))
-boxplot(newres$method_8$estimated.nonzeros, 
-        newres$method_9$estimated.nonzeros,
-        newres$method_10$estimated.nonzeros)
 
