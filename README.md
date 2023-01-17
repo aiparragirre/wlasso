@@ -11,6 +11,10 @@ Note that all the repository can be **downloaded** from `Code > Download ZIP`.
 
 The R package related to the paper is available in the folder `wlasso`. File `usage-package.R` provides an example of usage of the package functions. Data available in the folder `example-data` can be used to reproduce the examples proposed in the file `usage-package.R`.
 
+This package depends on `survey` and `glmnet` packages.
+
+The R package related to the paper is available in the folder `wlasso`. File `usage-package.R` provides an example of usage of the package functions. Data available in the folder `example-data` can be used to reproduce the examples proposed in the file `usage-package.R`.
+
 Three functions are available in the package:
 
 - `wlasso`: This is the **main function**. This function allows as to fit LASSO prediction (linear or logistic) models to complex survey data, considering sampling weights in the estimation process and selects the lambda that minimizes the error based on different replicate weights methods.
@@ -18,6 +22,15 @@ Three functions are available in the package:
 - `replicate.weights`: allows to randomly define training and test sets by means of the replicate weights' methods analyzed throughout the paper. The function `wlasso` depends on this function to define training and test sets. In particular, the methods that can be considered by means of this function are: 
   - The ones that depend on the function `as.svrepdesign` from the `survey` package: Jackknife Repeated Replication (`JKn`), Bootstrap (`bootstrap` and `subbootstrap`) and Balanced Repeated Replication (`BRR`).
   - New proposals: Design-based cross-validation (`dCV`), split-sample repeated replication (`split`) and extrapolation (`extrapolation`).
+
+### Installation of the package in R
+
+To install the package please run the following code in R:
+
+```{r}
+library("devtools")
+install_github("aiparragirre/wlasso/wlasso")
+```
 
 ## R code of the simulation study
 
