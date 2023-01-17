@@ -7,7 +7,7 @@ load("example-data/sample_G.RData")
 
 mcv <- wlasso(data = sample_G, col.y = "y", col.x = 1:50, family = "gaussian", 
               cluster = "cluster", strata = "strata", weights = "weights",
-              method = "cv", k=10, R=20, seed = 100)
+              method = "dCV", k=10, R=20, seed = 100)
 plot(mcv)
 coef(mcv$model.min)
 
