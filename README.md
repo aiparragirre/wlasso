@@ -1,6 +1,11 @@
 # wlasso
 
-Note that all the repository can be downloade from `Code > Download ZIP`.
+The goal of this repository is two-fold: 
+
+- To put publicly available the R package `wlasso`. This package allows to fit linear and logistic regression models to complex survey data.
+- The simulation study that analyzes the performance of replicate weights' methods to define training and test sets to select optimal LASSO regression models is also available.
+
+Note that all the repository can be downloaded from `Code > Download ZIP`.
 
 ## R package - wlasso
 
