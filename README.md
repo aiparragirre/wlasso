@@ -38,6 +38,11 @@ All the R code needed to reproduce the results obtained in the simulation study 
 
 In the folder `Functions` all the functions needed to conduct the simulation study are available.
 
-We need to run the code in the file `exe-sim.R` to run the simulations. The results of these simulations can also be [downloaded here](http://aiparragirre006.quickconnect.to/d/s/s05YGPbtlVuBLlEmyrsCKzAzTWsAJQHj/WSBRz8Um3KgrI41j1AdLj2J3r52pfmuQ-RrVAxuUcJQo).
+We need to run the code in the file `exe-sim.R` to run the simulations. The results of these simulations can also be [downloaded here](http://aiparragirre006.quickconnect.to/d/s/s05YGPbtlVuBLlEmyrsCKzAzTWsAJQHj/WSBRz8Um3KgrI41j1AdLj2J3r52pfmuQ-RrVAxuUcJQo). 
 
+If you want to reproduce the graphics, please save the results in the folder `Results` and run the file `exe-results.R.
+
+We need to run the code in the file `exe-sim.R` to run the simulations. The results of these simulations can also be [downloaded here](http://aiparragirre006.quickconnect.to/d/s/s05YGPbtlVuBLlEmyrsCKzAzTWsAJQHj/WSBRz8Um3KgrI41j1AdLj2J3r52pfmuQ-RrVAxuUcJQo). If you want to reproduce the graphics, please save the results in the folder `Results`.
+
+All the graphics shown in the paper are available in the folder `Graphics` and the numerical results in `Tables`.
 
