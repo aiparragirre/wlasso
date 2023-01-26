@@ -11,6 +11,7 @@ library(ggplot2)
 # Functions ---------------------------------------------------------------
 
 sapply(paste0("Functions/Results-Graphics/",list.files("Functions/Results-Graphics", full.names=F, pattern='\\.[rR]$')), source)
+source("Functions/Simulation study/Initialize/matrix.methods.R")
 
 # Params ------------------------------------------------------------------
 
@@ -50,42 +51,36 @@ method.names <- c("JKn",
 
 # Results -----------------------------------------------------------------
 
-# Indicate the name of the file related to the scenario:
-obj.name <- "res_linear_scenario2" 
-load(paste0("Simulations/",obj.name,".RData"))
+# Indicate the name of the file related to the scenario and run the rest:
+# Select between: res_linear_scenario1, res_linear_scenario2, res_logistic_scenario1, res_logistic_scenario2
+obj.name <- "res_linear_scenario1" 
+load(paste0("Results/",obj.name,".RData"))
 
+# Run all:
 method.run <- c(1, 9, 14, 15, 20:21, 24, 39:40)
 
 if(obj.name %in% c("res_linear_scenario1", "res_linear_scenario2")){
-  down.y <- 0
-  up.y <- 600
+  down.y <- 100
+  up.y <- 800
   x.legend <- -3.5
   y.legend <- up.y
   if(obj.name == "res_linear_scenario1"){
-    scenario <- "Scenario 1 (a)"
+    scenario <- "S1(G)"
   } else {
-    scenario <- "Scenario 2 (a)"
+    scenario <- "S2(G)"
   }
 } else {
-  down.y <- 0
-  up.y <- 1
+  down.y <- 0.3
+  up.y <- 1.3
   x.legend <- -6
   y.legend <- up.y
   if(obj.name == "res_logistic_scenario1"){
-    scenario <- "Scenario 1 (b)"
+    scenario <- "S1(B)"
   } else {
-    scenario <- "Scenario 2 (b)"
+    scenario <- "S2(B)"
   }
 }
 
-
-# Log-lambda lines and population error:
-f.plot.lines(res = res.transform(get(obj.name), method.ind = method.run), 
-             obj.name = obj.name, ylim = NULL, opacity = 0.25,
-             mf.r = 2, mf.c = 5, l.width = 12, l.height = 5,
-             method.ind = method.run, 
-             method.names = c("JKn", "CV (K=10)", "Bootstrap", "BRR", "Split R=20 (cv)", 
-                              "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"))
 
 # Log-lambda bias:
 f.plot.bias(res = res.transform(get(obj.name), method.ind = method.run), 
@@ -96,61 +91,30 @@ f.plot.bias(res = res.transform(get(obj.name), method.ind = method.run),
                              "Split-boot", "Extrap.","SRSCV", "Unw"),
             colours = viridis::viridis(length(method.run)))
 
-# Number of variables
+# Number of variables in the selected models:
 f.plot.nvar(res = res.transform(get(obj.name), method.ind = method.run), 
             obj.name = obj.name, ylim = NULL, opacity = 0.25,
             l.width = 8, l.height = 5, scenario = scenario,
             method.ind = method.run, 
-            #method.names = c("JKn", "CV (K=10)", "Bootstrap", "BRR", "Split R=20 (cv)", 
-            #                 "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"),
             method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
                              "Split-boot", "Extrap.","SRSCV", "Unw"),
             colours = c("lightgray",viridis::viridis(length(method.run))))
 
-# Error boxplots
-f.plot.error(res = res.transform(get(obj.name), method.ind = method.run), 
-             obj.name = obj.name, ylim = c(0.55, 0.6), 
-             l.width = 8, l.height = 5,
-             method.ind = method.run, 
-             method.names = c("JKn", "CV (K=10)", "Bootstrap", "BRR", "Split R=20 (cv)", 
-                             "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"),
-             colours = c(viridis::viridis(length(method.run)),"lightgray"))
 
-# Training models' error:
+# Training models' error (supporting information, not shown in the paper):
 f.plot.train.error(obj.name = obj.name, runs = c(100, 200, 300, 400), 
                    ylim = c(down.y, up.y),
                    l.width = 15, l.height = 8,
                    methods = c(1:length(method.run)), 
-                   method.names = c("JKn", "CV (K=10)", "Bootstrap", "BRR", "Split R=20 (cv)", 
-                                    "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"),
+                   method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split R=20 (cv)", 
+                                    "Split R=20 (boot)", "Extrap. R=20","SRSCV","Unw"),
                    cols = rainbow(length(method.run)),
                    x.legend = x.legend, y.legend = y.legend)
 
-# 
-f.plot.lambda.error(res = res.transform(get(obj.name), method.ind = method.run), 
-                    obj.name = obj.name, ylim = NULL, opacity = 0.25, 
-                    l.width = 8, l.height = 5, title = scenario,
-                    method.ind = method.run, 
-                    #method.names = c("JKn", "CV (K=10)", "Bootstrap", "BRR", "Split R=20 (cv)", 
-                    #                 "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"),
-                    method.names = c("JKn", "CV", "Bootstrap", "BRR", "Split (cv)", 
-                                     "Split (boot)", "Extrap","SRSCV","Unw"),
-                    colours = c("lightgray",viridis::viridis(length(method.run))))
 
-
-# 
-f.points.lambda.error(res = res.transform(get(obj.name), method.ind = method.run), 
-                      obj.name = obj.name, ylim = NULL, opacity = 0.25,
-                      l.width = 8, l.height = 5,
-                      method.ind = method.run, 
-                      method.names = c("JKn", "CV (K=10)", "Bootstrap", "BRR", "Split R=20 (cv)", 
-                                       "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"),
-                      colours = c(viridis::viridis(length(method.run)),"lightgray"))
-
-
-
+# Numberical results
 f.table(res = res.transform(get(obj.name), method.ind = method.run), 
         obj.name = obj.name, 
         method.ind = method.run, 
-        method.names = c("JKn", "CV (K=10)", "Bootstrap", "BRR", "Split R=20 (cv)", 
+        method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split R=20 (cv)", 
                          "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"))
