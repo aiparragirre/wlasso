@@ -1,5 +1,5 @@
 
-f.pop.error <- function(res, method, title, run, col, ylim){
+f.pop.error <- function(res, method, title, run, col, ylim, x.legend, y.legend){
   
   plot(y = res[[paste0("sample_",run)]]$pop.error, 
        x = log(res[[paste0("sample_",run)]]$lambda.grid), 
