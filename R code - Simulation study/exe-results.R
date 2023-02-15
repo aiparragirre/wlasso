@@ -88,7 +88,7 @@ f.plot.bias(res = res.transform(get(obj.name), method.ind = method.run),
             method.ind = method.run, 
             method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
                              "Split-boot", "Extrap.","SRSCV", "Unw"),
-            colours = viridis::viridis(length(method.run)))
+            colours = c(viridis::viridis(length(method.run))[1:7], "orange", viridis::viridis(length(method.run))[9]))
 
 # Number of variables in the selected models:
 f.plot.nvar(res = res.transform(get(obj.name), method.ind = method.run), 
@@ -97,23 +97,31 @@ f.plot.nvar(res = res.transform(get(obj.name), method.ind = method.run),
             method.ind = method.run, 
             method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
                              "Split-boot", "Extrap.","SRSCV", "Unw"),
-            colours = c("lightgray",viridis::viridis(length(method.run))))
+            colours = c("lightgray",viridis::viridis(length(method.run))[1:7], "orange", viridis::viridis(length(method.run))[9]))
 
 
 # Training models' error (supporting information, not shown in the paper):
-f.plot.train.error(obj.name = obj.name, runs = c(100, 200, 300, 400), 
-                   ylim = c(down.y, up.y),
-                   l.width = 15, l.height = 8,
-                   methods = c(1:length(method.run)), 
-                   method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
-                                    "Split-boot", "Extrap.","SRSCV", "Unw"),
-                   cols = rainbow(length(method.run)),
-                   x.legend = x.legend, y.legend = y.legend)
+f.plot.train.error.all(obj.name = obj.name, runs = c(100, 200, 300, 400), 
+                       ylim = c(down.y, up.y),
+                       l.width = 15, l.height = 8,
+                       methods = c(1:length(method.run)), 
+                       method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
+                                        "Split-boot", "Extrap.","SRSCV", "Unw"),
+                       cols = c(viridis::viridis(length(method.run))[1:7], "orange", viridis::viridis(length(method.run))[9]),
+                       x.legend = x.legend, y.legend = y.legend)
+f.plot.train.error.each(obj.name = obj.name, runs = c(100, 200, 300, 400), 
+                        ylim = c(down.y, up.y),
+                        l.width = 15, l.height = 8,
+                        methods = c(1:length(method.run)), 
+                        method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
+                                         "Split-boot", "Extrap.","SRSCV", "Unw"),
+                        cols = c(viridis::viridis(length(method.run))[1:7], "orange", viridis::viridis(length(method.run))[9]),
+                        x.legend = x.legend, y.legend = y.legend)
 
 
 # Numberical results
 f.table(res = res.transform(get(obj.name), method.ind = method.run), 
         obj.name = obj.name, 
         method.ind = method.run, 
-        method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split R=20 (cv)", 
-                         "Split R=20 (boot)", "Extrap. R=20","SRSCV (K=10)","Unw (K=10)"))
+        method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
+                         "Split-boot", "Extrap.","SRSCV", "Unw"))
