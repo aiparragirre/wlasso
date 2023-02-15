@@ -1,5 +1,4 @@
 rm(list=ls())
-setwd("/Users/amaiaiparragirre/SynologyDrive/Lana/Tesia/2022-07 Estantzia NZ/Ikerkuntza/Programazioa/GitHub/R code - Simulation study")
 
 # Packages ----------------------------------------------------------------
 
@@ -106,8 +105,8 @@ f.plot.train.error(obj.name = obj.name, runs = c(100, 200, 300, 400),
                    ylim = c(down.y, up.y),
                    l.width = 15, l.height = 8,
                    methods = c(1:length(method.run)), 
-                   method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split R=20 (cv)", 
-                                    "Split R=20 (boot)", "Extrap. R=20","SRSCV","Unw"),
+                   method.names = c("JKn", "dCV", "Bootstrap", "BRR", "Split-cv", 
+                                    "Split-boot", "Extrap.","SRSCV", "Unw"),
                    cols = rainbow(length(method.run)),
                    x.legend = x.legend, y.legend = y.legend)
 
