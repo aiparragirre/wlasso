@@ -1,6 +1,4 @@
 rm(list=ls())
-options(width = 110)
-setwd("/Users/amaiaiparragirre/SynologyDrive/Lana/Tesia/2022-07 Estantzia NZ/Ikerkuntza/Programazioa")
 
 # Packages ----------------------------------------------------------------
 
