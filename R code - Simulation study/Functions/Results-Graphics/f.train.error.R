@@ -6,7 +6,7 @@ f.train.error <- function(res, run, methods, method.names, ylim, plot.title = ""
   plot(y = res[[paste0("sample_",run)]]$pop.error, 
        x = log(res[[paste0("sample_",run)]]$lambda.grid), 
        type = "l", ylim=ylim,
-       xlab = "log(lambda)", ylab = "", main = plot.title, lwd=2)
+       xlab = "log(lambda)", ylab = "error", main = plot.title, lwd=2)
   
   
   if(plot.type == "train.to.pop"){
