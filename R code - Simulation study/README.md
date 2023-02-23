@@ -6,7 +6,7 @@ In this folder you can find the R code to reproduce the simulation study and the
 
 - **Functions:** in the folder "Functions", all the functions applied in the simulation study are available.
 - **Supporting Information - Cluster effect:** the R code to reproduce the numberical results shown as supporting material is available in this folder.
-- **exe-results.R:** code that need to be run in order to plot the results and obtained the graphics saved in the ``Graphics'' folder.
+- **exe-results.R:** code that need to be run in order to plot the results and obtained the graphics saved in the "Graphics" folder.
 - **exe-sim.R:** code that need to be run in order to run the simulation study and reproduce the results.
 
 
