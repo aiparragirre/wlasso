@@ -1,3 +1,5 @@
+# R code to analyze the cluster effect
+
 In this folder you can find the code to reproduce the results related to the cluster effect of the Supporting Information of the paper "Variable selection with LASSO regression for complex survey data" (Iparragirre, Lumley, Barrio, Arostegui).
 
 To obtain the results, the code available in the script `SuppInfo-cluster_effect.R` need to be run. 
