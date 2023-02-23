@@ -1,3 +1,4 @@
+# Results of the simulation study
 
 Run the simulations available in the file `exe-sim.R` or 
 download the results and save them in this folder.
