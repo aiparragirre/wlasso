@@ -21,7 +21,7 @@ Three functions are available in the package:
 - `plot.wlasso`: plots objects of class `wlasso`, indicating the estimated error of each lambda value and the number covariates of the model that minimizes the error.
 - `replicate.weights`: allows to randomly define training and test sets by means of the replicate weights' methods analyzed throughout the paper. The function `wlasso` depends on this function to define training and test sets. In particular, the methods that can be considered by means of this function are: 
   - The ones that depend on the function `as.svrepdesign` from the `survey` package: Jackknife Repeated Replication (`JKn`), Bootstrap (`bootstrap` and `subbootstrap`) and Balanced Repeated Replication (`BRR`).
-  - New proposals: Design-based cross-validation (`dCV`), split-sample repeated replication (`split`) and extrapolation (`extrapolation`).
+  - **New proposals:** Design-based cross-validation (`dCV`), split-sample repeated replication (`split`) and extrapolation (`extrapolation`).
 
 ### Installation of the package in R
 
