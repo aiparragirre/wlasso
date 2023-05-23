@@ -34,7 +34,8 @@ install_github("aiparragirre/wlasso/wlasso")
 
 ## R code of the simulation study
 
-All the R code needed to reproduce the results obtained in the simulation study of the paper "Variable selection with LASSO regression for complex survey data" (Iparragirre, Lumley, Barrio, Arostegui) (submitted) is available in the folder `R code - simulation study`.
+All the R code needed to reproduce the results obtained in the simulation study of the paper following paper is available in the folder `R code - simulation study`: 
+Iparragirre, A., Lumley, T., Barrio, I., & Arostegui, I. (2023). Variable selection with LASSO regression for complex survey data. Stat, 12(1), e578. https://doi.org/10.1002/sta4.578
 
 In the folder `Functions` all the functions needed to conduct the simulation study are available.
 
