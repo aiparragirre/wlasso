@@ -1,10 +1,13 @@
 Package: wlasso
-Title: What the Package Does (One Line, Title Case)
+Title: Weighted LASSO Regression Models with Complex Survey Data
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Amaia", "Iparragirre", , "amaia.iparragirre@ehu.eus", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0660-6535"))
+    person("Thomas", "Lumley")
+    person("Irantzu", "Barrio")
+    person("Inmaculada", "Arostegui")
+Description: Fit weighted LASSO regression models with complex survey data considering the sampling design when defining training and test sets using replicate weights.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
