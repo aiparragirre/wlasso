@@ -13,8 +13,6 @@ The R package related to the paper is available in the folder `wlasso`. File `us
 
 This package depends on `survey` and `glmnet` packages.
 
-The R package related to the paper is available in the folder `wlasso`. File `usage-package.R` provides an example of usage of the package functions. Data available in the folder `example-data` can be used to reproduce the examples proposed in the file `usage-package.R`.
-
 Three functions are available in the package:
 
 - `wlasso`: This is the **main function**. This function allows as to fit LASSO prediction (linear or logistic) models to complex survey data, considering sampling weights in the estimation process and selects the lambda that minimizes the error based on different replicate weights methods.
