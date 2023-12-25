@@ -9,7 +9,7 @@ Note that all the repository can be **downloaded** from `Code > Download ZIP`.
 
 ## R package - wlasso
 
-The R package related to the paper is available in the folder `wlasso`. File `usage-package.R` provides an example of usage of the package functions. Data available in the folder `example-data` can be used to reproduce the examples proposed in the file `usage-package.R`.
+The R package related to the paper is available in the folder `wlasso`. File `usage-package.R` provides an example of usage of the package functions. Data available in the folder `example-data` can be used as a toy example to play with the package.
 
 This package depends on `survey` and `glmnet` packages.
 
