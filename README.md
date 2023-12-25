@@ -15,24 +15,28 @@ This package depends on `survey` and `glmnet` packages.
 
 Three functions are available in the package:
 
-- `wlasso`: This is the **main function**. This function allows as to fit LASSO prediction (linear or logistic) models to complex survey data, considering sampling weights in the estimation process and selects the lambda that minimizes the error based on different replicate weights methods.
-- `plot.wlasso`: plots objects of class `wlasso`, indicating the estimated error of each lambda value and the number covariates of the model that minimizes the error.
-- `replicate.weights`: allows to randomly define training and test sets by means of the replicate weights' methods analyzed throughout the paper. The function `wlasso` depends on this function to define training and test sets. In particular, the methods that can be considered by means of this function are: 
+- `wlasso`: This is the **main function**. This function allows as to fit LASSO prediction (linear or logistic) models to complex survey data, considering sampling weights in the estimation process and selecting the lambda that minimizes the error based on different replicate weights methods.
+- `wlasso.plot`: plots objects of class `wlasso`, indicating the estimated error of each lambda value and the number covariates of the model that minimizes the error.
+- `replicate.weights`: allows randomly defining training and test sets by means of the replicate weights' methods analyzed throughout the paper. The function `wlasso` depends on this function to define training and test sets. In particular, the methods that can be considered by means of this function are: 
   - The ones that depend on the function `as.svrepdesign` from the `survey` package: Jackknife Repeated Replication (`JKn`), Bootstrap (`bootstrap` and `subbootstrap`) and Balanced Repeated Replication (`BRR`).
   - **New proposals:** Design-based cross-validation (`dCV`), split-sample repeated replication (`split`) and extrapolation (`extrapolation`).
 
 ### Installation of the package in R
 
-To install the package please run the following code in R:
+To install the package, please run the following code in R:
 
 ```{r}
 library("devtools")
 install_github("aiparragirre/wlasso/wlasso")
 ```
 
+**The current package was updated on 12/25/2023. Previous versions of the package are available in the `old_versions` folder.**
+
+
+
 ## R code of the simulation study
 
-All the R code needed to reproduce the results obtained in the simulation study of the paper following paper is available in the folder `R code - simulation study`: 
+All the R code needed to reproduce the results obtained in the simulation study of the following paper is available in the folder `R code - simulation study`: 
 
 Iparragirre, A., Lumley, T., Barrio, I., & Arostegui, I. (2023). Variable selection with LASSO regression for complex survey data. *Stat, 12*(1), e578. https://doi.org/10.1002/sta4.578
 
