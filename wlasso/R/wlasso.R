@@ -52,7 +52,7 @@
 #'               method = "dCV", k=10, R=20)
 #'
 #' # Or equivalently:
-#' mydesign <- survey::svydesign(ids=~1, strata = ~strata, weights = ~weights,
+#' mydesign <- survey::svydesign(ids=~cluster, strata = ~strata, weights = ~weights,
 #'                               nest = TRUE, data = simdata_lasso_binomial)
 #' mcv <- wlasso(col.y = "y", col.x = 1:50, design = mydesign,
 #'               family = "binomial",
