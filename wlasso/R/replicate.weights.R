@@ -149,8 +149,8 @@ replicate.weights <- function(data,
 
   # Step 0: Notation
   if(!is.null(design)){
-    cluster <- as.character(design$call$ids[2])
-    if(cluster == "1"){
+    cluster <- as.character(design$call$id[2])
+    if(cluster == "1"  || cluster == "0"){
       cluster <- NULL
     }
     strata <- as.character(design$call$strata[2])
@@ -334,7 +334,7 @@ f.folds <- function(data, k=5, strata=NULL, cluster=NULL){
 
   h.fold <- table(data[,strata], v.folds)!=0
   h.fold.sum <- apply(h.fold, 1, sum)
-  h.onefold <- which(h.fold.sum==1)
+  h.onefold <- names(which(h.fold.sum==1))
   if(length(h.onefold)!=0){
     for(hh in h.onefold){
       kk <- which(h.fold[hh,]==1)
