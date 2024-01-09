@@ -1,0 +1,16 @@
+citHeader("To cite wlasso in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "Variable selection with LASSO regression for complex survey data",
+  author   = "Amaia Iparragirre and Thomas Lumley and Irantzu Barrio and Inmaculada Arostegui",
+  journal  = "Stat",
+  year     = "2023",
+  volume   = "12",
+  number   = "1",
+  pages    = "e578",
+  url      = "https://onlinelibrary.wiley.com/doi/abs/10.1002/sta4.578",
+  textVersion = paste(
+
+  )
+)
