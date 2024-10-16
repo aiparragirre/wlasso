@@ -5,9 +5,13 @@ The goal of this repository is two-fold:
 - To put publicly available the **R package** `wlasso`. This package allows to fit linear and logistic regression models to complex survey data.
 - The R code of the **simulation study** that analyzes the performance of replicate weights' methods to define training and test sets to select optimal LASSO regression models is also available.
 
-Note that all the repository can be **downloaded** from `Code > Download ZIP`.
+Note that the whole repository can be **downloaded** from `Code > Download ZIP`.
 
 ## R package - wlasso
+
+> [!WARNING]
+> **This package is now available in CRAN as [svyVarSel](https://cran.r-project.org/web/packages/svyVarSel/index.html).**
+
 
 The R package related to the paper is available in the folder `wlasso`. File `usage-package.R` provides an example of usage of the package functions. Data available in the folder `example-data` can be used as a toy example to play with the package.
 
@@ -23,14 +27,27 @@ Three functions are available in the package:
 
 ### Installation of the package in R
 
-To install the package, please run the following code in R:
+To install the package [svyVarSel from CRAN](https://cran.r-project.org/web/packages/svyVarSel/index.html):
+
+```{r}
+install.packages("svyVarSel")
+```
+
+To install the updated version of the package from [GitHub](https://github.com/aiparragirre/svyVarSel):
+
+```{r}
+devtools::install_github("aiparragirre/svyVarSel")
+```
+
+> [!CAUTION]
+> The package available on this site is not the most updated version of the package. The current package was updated on 12/25/2023. Previous versions of the package are available in the `old_versions` folder. **New versions of the package are available at [svyVarSel](https://cran.r-project.org/web/packages/svyVarSel/index.html).**
+If, in any case, you prefer to install the package `wlasso` on this GitHub page (not recommended), please run the following code in R:
 
 ```{r}
 library("devtools")
 install_github("aiparragirre/wlasso/wlasso")
 ```
 
-**The current package was updated on 12/25/2023. Previous versions of the package are available in the `old_versions` folder.**
 
 
 
